@@ -1041,6 +1041,10 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   font-size: 0.85rem;
 }
 
+.footer__bottom > p {
+  margin: 0;
+}
+
 .footer__social {
   display: flex;
   gap: 12px;
@@ -1063,6 +1067,26 @@ p { margin-bottom: 1rem; color: var(--text-light); }
 }
 
 .footer__social svg { width: 16px; height: 16px; fill: #fff; }
+
+.footer__credit-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer__credit-link:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.footer__credit-link svg {
+  width: 16px;
+  height: 16px;
+}
 
 /* --- Back to Top --- */
 .back-to-top {
