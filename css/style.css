@@ -268,23 +268,26 @@ p { margin-bottom: 1rem; color: var(--text-light); }
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header__logo img {
-  height: 40px;
+  height: 36px;
   width: auto;
 }
 
 .header__logo-text {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--secondary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .header__logo-text span {
-  color: var(--secondary);
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .nav { display: flex; align-items: center; gap: 36px; }
@@ -642,6 +645,8 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+  background-size: cover;
+  background-position: center;
   min-height: 400px;
   display: flex;
   align-items: center;
@@ -953,22 +958,27 @@ p { margin-bottom: 1rem; color: var(--text-light); }
 .footer__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer__logo img {
-  height: 36px;
+  height: 32px;
   width: auto;
 }
 
 .footer__logo-text {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-.footer__logo-text span { color: var(--accent); }
+.footer__logo-text span {
+  color: var(--accent);
+  font-weight: 600;
+}
 
 .footer__title {
   font-family: 'Inter', sans-serif;
@@ -1230,6 +1240,9 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   .nav__cta { margin-top: 20px; }
 
   .nav-toggle { display: block; }
+
+  .header__logo img { height: 28px; }
+  .header__logo-text { font-size: 1rem; }
 
   .hero { min-height: 70vh; padding: 100px 0 60px; }
   .hero__decoration { display: none; }
