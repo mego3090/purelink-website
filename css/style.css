@@ -449,11 +449,25 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   padding: 20px 0;
   overflow: hidden;
   white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.marquee--dragging {
+  cursor: grabbing;
 }
 
 .marquee__inner {
   display: inline-flex;
+  flex-shrink: 0;
   animation: marquee 30s linear infinite;
+  will-change: transform;
+  min-width: 200%;
+}
+
+.marquee__inner--paused {
+  animation-play-state: paused;
 }
 
 .marquee__item {
@@ -463,7 +477,8 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   color: rgba(255,255,255,0.12);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 0 40px;
+  padding: 0 20px;
+  flex-shrink: 0;
 }
 
 .marquee__item span {

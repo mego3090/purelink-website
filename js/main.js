@@ -12,6 +12,7 @@
     initCounters();
     initBackToTop();
     initSmoothScroll();
+    initMarqueeDrag();
   });
 
   // --- Sticky Header ---
@@ -136,6 +137,86 @@
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  // --- Marquee Drag/Swipe ---
+  function initMarqueeDrag() {
+    var marquee = document.querySelector('.marquee');
+    var inner = document.querySelector('.marquee__inner');
+    if (!marquee || !inner) return;
+
+    var isDragging = false;
+    var startX = 0;
+    var currentTranslate = 0;
+    var resumeTimer = null;
+
+    function getAnimationTranslateX() {
+      var style = window.getComputedStyle(inner);
+      var matrix = style.transform;
+      if (matrix && matrix !== 'none') {
+        var values = matrix.match(/matrix.*\((.+)\)/);
+        if (values) {
+          var parts = values[1].split(', ');
+          return parseFloat(parts[4]) || 0;
+        }
+      }
+      return 0;
+    }
+
+    function onDragStart(e) {
+      isDragging = true;
+      startX = (e.touches ? e.touches[0].clientX : e.clientX);
+      currentTranslate = getAnimationTranslateX();
+
+      inner.classList.add('marquee__inner--paused');
+      inner.style.transform = 'translateX(' + currentTranslate + 'px)';
+      marquee.classList.add('marquee--dragging');
+
+      if (resumeTimer) {
+        clearTimeout(resumeTimer);
+        resumeTimer = null;
+      }
+    }
+
+    function onDragMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX);
+      var diff = x - startX;
+      var newX = currentTranslate + diff;
+
+      // Wrap position so the ribbon never runs out of content
+      var halfWidth = inner.scrollWidth / 2;
+      if (halfWidth > 0) {
+        // Keep translateX in the range [0, -halfWidth) for seamless wrapping
+        newX = newX % halfWidth;
+        if (newX > 0) newX -= halfWidth;
+      }
+
+      inner.style.transform = 'translateX(' + newX + 'px)';
+    }
+
+    function onDragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      marquee.classList.remove('marquee--dragging');
+
+      // Resume auto-scroll after 2 seconds
+      resumeTimer = setTimeout(function() {
+        inner.style.transform = '';
+        inner.classList.remove('marquee__inner--paused');
+      }, 2000);
+    }
+
+    // Mouse events
+    marquee.addEventListener('mousedown', onDragStart);
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('mouseup', onDragEnd);
+
+    // Touch events
+    marquee.addEventListener('touchstart', onDragStart, { passive: true });
+    window.addEventListener('touchmove', onDragMove, { passive: false });
+    window.addEventListener('touchend', onDragEnd);
   }
 
   // --- Smooth Scroll for anchor links ---
