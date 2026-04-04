@@ -1240,7 +1240,8 @@ p { margin-bottom: 1rem; color: var(--text-light); }
 
   .nav-toggle { display: block; }
 
-  .header__logo-text { font-size: 1.2rem; }
+  .header__logo img { height: 28px; }
+  .header__logo-text { font-size: 1.15rem; }
 
   .hero { min-height: 70vh; padding: 100px 0 60px; }
   .hero__decoration { display: none; }
