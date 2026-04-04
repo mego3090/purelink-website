@@ -265,8 +265,14 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   height: 80px;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .header__logo img {
-  height: 50px;
+  height: 40px;
   width: auto;
 }
 
@@ -942,6 +948,17 @@ p { margin-bottom: 1rem; color: var(--text-light); }
   line-height: 1.8;
   margin-top: 16px;
   max-width: 320px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo img {
+  height: 36px;
+  width: auto;
 }
 
 .footer__logo-text {
