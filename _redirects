@@ -1,0 +1,11 @@
+# Redirect .html URLs to clean URLs (301 permanent)
+/index.html / 301
+/about.html /about 301
+/products.html /products 301
+/services.html /services 301
+/contact.html /contact 301
+/index-ar.html /index-ar 301
+/about-ar.html /about-ar 301
+/products-ar.html /products-ar 301
+/services-ar.html /services-ar 301
+/contact-ar.html /contact-ar 301
