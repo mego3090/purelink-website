@@ -14,6 +14,51 @@
   <link rel="alternate" hreflang="en" href="/privacy">
   <link rel="alternate" hreflang="ar" href="/privacy-ar">
   <link rel="alternate" hreflang="x-default" href="/privacy">
+  <style>
+    /* Scoped overrides for long-form legal text — keeps marketing pages untouched */
+    .legal-content { font-size: 1rem; line-height: 1.75; color: var(--text-light); }
+    .legal-content h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-content h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .legal-content p { margin-bottom: 1rem; }
+    .legal-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .legal-content ul ul {
+      list-style: circle;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .legal-content li { margin-bottom: 0.5rem; }
+    .legal-content a { color: var(--accent); text-decoration: underline; }
+    .legal-content a:hover { color: var(--primary); }
+    .legal-content code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+      background: var(--light-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .legal-content strong { color: var(--secondary); font-weight: 600; }
+    [dir="rtl"] .legal-content ul { padding-left: 0; padding-right: 1.5rem; }
+  </style>
 </head>
 <body>
 
@@ -74,9 +119,9 @@
 
   <!-- Privacy Content -->
   <section class="section">
-    <div class="container" style="max-width: 860px;">
+    <div class="container legal-content" style="max-width: 820px;">
 
-      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 32px;">
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">
         <strong>Last updated:</strong> 15 April 2026<br>
         <strong>Effective date:</strong> 15 April 2026
       </p>
@@ -85,13 +130,13 @@
 
       <p>By using our Services, you agree to the practices described in this Policy. If you do not agree, please do not use our Services.</p>
 
-      <h2 style="margin-top: 48px;">1. Who We Are</h2>
+      <h2>1. Who We Are</h2>
       <p><strong>PureLink Chemicals</strong> operates a business-to-business (B2B) marketplace that connects buyers of chemicals with verified suppliers. Our registered office is at Sodic, Portal A-601, Beverly Hills Compound, Sheikh Zayed City, Egypt.</p>
       <p>For privacy questions, contact our Data Protection contact at <a href="mailto:sales@purelinkchemicals.com">sales@purelinkchemicals.com</a>.</p>
 
-      <h2 style="margin-top: 48px;">2. Information We Collect</h2>
+      <h2>2. Information We Collect</h2>
 
-      <h3 style="margin-top: 24px;">2.1 Information You Provide Directly</h3>
+      <h3>2.1 Information You Provide Directly</h3>
       <ul>
         <li><strong>Account information:</strong> first name, last name, email address, password (stored as a one-way bcrypt hash — we never see your plain password), phone number with country code, job title, preferred language (English or Arabic).</li>
         <li><strong>Company information:</strong> company name, company email, company phone, company address, country, currency, website, business field, commercial register number, tax number, contact person, position.</li>
@@ -99,7 +144,7 @@
         <li><strong>Support requests:</strong> any communication you send to us via email, support tickets, or contact forms.</li>
       </ul>
 
-      <h3 style="margin-top: 24px;">2.2 Information Collected Automatically</h3>
+      <h3>2.2 Information Collected Automatically</h3>
       <ul>
         <li><strong>Authentication tokens:</strong> on mobile, we store a Laravel Sanctum session token in Android's secure encrypted storage (Expo SecureStore / Android Keystore) so you don't have to log in every time.</li>
         <li><strong>Application cache:</strong> on mobile, we use AsyncStorage to cache product catalogs and listings locally so the app works offline.</li>
@@ -109,7 +154,7 @@
         <li><strong>Server logs:</strong> our backend servers retain standard request logs (IP address, request path, response code, user agent) for security monitoring and debugging, typically for 30 days.</li>
       </ul>
 
-      <h3 style="margin-top: 24px;">2.3 Information We Do NOT Collect</h3>
+      <h3>2.3 Information We Do NOT Collect</h3>
       <ul>
         <li>We do <strong>not</strong> collect precise location (GPS coordinates).</li>
         <li>We do <strong>not</strong> access your contacts, photos, microphone, or camera unless you explicitly attach a file.</li>
@@ -117,7 +162,7 @@
         <li>We do <strong>not</strong> sell your personal information to third parties.</li>
       </ul>
 
-      <h2 style="margin-top: 48px;">3. How We Use Your Information</h2>
+      <h2>3. How We Use Your Information</h2>
       <p>We use the information described above only for the following purposes:</p>
       <ul>
         <li><strong>Service delivery:</strong> to register and authenticate you, route RFQs to suppliers, deliver quotations to buyers, generate purchase orders, and provide all marketplace functionality.</li>
@@ -128,7 +173,7 @@
         <li><strong>Service improvement:</strong> to understand how our Services are used, fix bugs, and improve usability.</li>
       </ul>
 
-      <h2 style="margin-top: 48px;">4. Legal Basis (GDPR / Egyptian Data Protection Law)</h2>
+      <h2>4. Legal Basis (GDPR / Egyptian Data Protection Law)</h2>
       <p>If you are in the European Economic Area, the United Kingdom, or another jurisdiction with similar laws, we process your personal information on the following bases:</p>
       <ul>
         <li><strong>Performance of a contract:</strong> to provide the marketplace services you requested.</li>
@@ -138,7 +183,7 @@
       </ul>
       <p>For users in Egypt, processing complies with the <strong>Personal Data Protection Law (Law No. 151 of 2020)</strong>.</p>
 
-      <h2 style="margin-top: 48px;">5. How We Share Information</h2>
+      <h2>5. How We Share Information</h2>
       <p>We share personal information only in these limited circumstances:</p>
       <ul>
         <li><strong>Between marketplace participants:</strong> Buyer and supplier identities are revealed to each other only after a purchase order is accepted, in line with our double-blind design. Before that, all interactions use anonymous codes.</li>
@@ -155,7 +200,7 @@
       </ul>
       <p>We do <strong>not</strong> sell, rent, or trade your personal information.</p>
 
-      <h2 style="margin-top: 48px;">6. Data Retention</h2>
+      <h2>6. Data Retention</h2>
       <ul>
         <li><strong>Active accounts:</strong> retained for as long as your account is active.</li>
         <li><strong>Closed accounts:</strong> personal data is marked deleted and removed from active queries within 30 days. Limited audit-trail records (showing that a user with a given identifier performed certain actions) are retained for up to 7 years to comply with B2B trade and tax recordkeeping obligations.</li>
@@ -164,7 +209,7 @@
         <li><strong>Crash reports (Sentry):</strong> retained according to Sentry's default retention (90 days).</li>
       </ul>
 
-      <h2 style="margin-top: 48px;">7. Security</h2>
+      <h2>7. Security</h2>
       <p>We use industry-standard safeguards to protect your information, including:</p>
       <ul>
         <li>Transport Layer Security (TLS) encryption for all data in transit.</li>
@@ -176,7 +221,7 @@
       </ul>
       <p>No internet service is 100% secure. If we become aware of a security incident affecting your data, we will notify you in accordance with applicable law.</p>
 
-      <h2 style="margin-top: 48px;">8. Your Rights</h2>
+      <h2>8. Your Rights</h2>
       <p>Subject to applicable law, you have the right to:</p>
       <ul>
         <li><strong>Access</strong> the personal information we hold about you.</li>
@@ -189,13 +234,13 @@
       </ul>
       <p>To exercise any of these rights, email <a href="mailto:sales@purelinkchemicals.com">sales@purelinkchemicals.com</a>. We respond to verified requests within 30 days.</p>
 
-      <h2 style="margin-top: 48px;">9. International Data Transfers</h2>
+      <h2>9. International Data Transfers</h2>
       <p>Our servers may be located outside your country of residence. When we transfer personal data internationally, we rely on appropriate safeguards (such as standard contractual clauses) where required by applicable law.</p>
 
-      <h2 style="margin-top: 48px;">10. Children's Privacy</h2>
+      <h2>10. Children's Privacy</h2>
       <p>Our Services are intended for business users aged 18 and above. We do not knowingly collect personal information from children under 18. If you believe a child has provided us information, please contact us so we can delete it.</p>
 
-      <h2 style="margin-top: 48px;">11. Mobile App Permissions</h2>
+      <h2>11. Mobile App Permissions</h2>
       <p>The Purelink Chemicals Android app requests only the permissions strictly necessary to function:</p>
       <ul>
         <li><strong>Internet:</strong> to communicate with our backend.</li>
@@ -204,13 +249,13 @@
       </ul>
       <p>The app does <strong>not</strong> request location, contacts, camera, microphone, or other sensitive permissions.</p>
 
-      <h2 style="margin-top: 48px;">12. Cookies and Similar Technologies</h2>
+      <h2>12. Cookies and Similar Technologies</h2>
       <p>The marketing site uses essential cookies only (no analytics or advertising cookies). The web platform uses session cookies to maintain your login state. The mobile app does not use browser cookies.</p>
 
-      <h2 style="margin-top: 48px;">13. Changes to This Policy</h2>
+      <h2>13. Changes to This Policy</h2>
       <p>We may update this Policy from time to time. We will post the updated Policy on this page with a revised "Last updated" date. For material changes, we will notify you through the Services or by email. Continued use of the Services after the update constitutes acceptance.</p>
 
-      <h2 style="margin-top: 48px;">14. Contact Us</h2>
+      <h2>14. Contact Us</h2>
       <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, contact us at:</p>
       <p style="background: var(--light-bg); border-radius: var(--radius-md); padding: 24px; border: 1px solid var(--border); margin-top: 16px;">
         <strong>PureLink Chemicals</strong><br>
