@@ -141,7 +141,7 @@
         <li><strong>Account information:</strong> first name, last name, email address, password (stored as a one-way bcrypt hash — we never see your plain password), phone number with country code, job title, preferred language (English or Arabic).</li>
         <li><strong>Company information:</strong> company name, company email, company phone, company address, country, currency, website, business field, commercial register number, tax number, contact person, position.</li>
         <li><strong>Business activity:</strong> requests for quotation (RFQs), supplier quotations you submit, purchase orders, product listings, file attachments (specifications, certificates, invoices), and any messages exchanged through the platform.</li>
-        <li><strong>Support requests:</strong> any communication you send to us via email, support tickets, or contact forms.</li>
+        <li><strong>Support requests:</strong> any communication you send to us via email, support tickets, contact forms, or the live chat widget on this website.</li>
       </ul>
 
       <h3>2.2 Information Collected Automatically</h3>
@@ -192,6 +192,7 @@
           <ul>
             <li><strong>Hosting infrastructure:</strong> Contabo (servers in Germany / United States) for backend hosting; Cloudflare Pages for marketing site hosting.</li>
             <li><strong>Crash and error reporting (mobile app):</strong> Sentry — only when explicitly enabled by configuration. Sentry receives crash stack traces and limited diagnostic data. No business data, no message contents, and no passwords are sent to Sentry.</li>
+            <li><strong>Live chat (this website):</strong> Crisp (Crisp IM SAS, EU-hosted) powers the chat widget on our marketing site. If you use it, the messages you send and any contact details you share in the chat are processed by Crisp on our behalf.</li>
             <li><strong>App distribution:</strong> Google Play (Android) for mobile app delivery; Expo Application Services (EAS) for build and deployment.</li>
           </ul>
         </li>
@@ -327,5 +328,6 @@
   </button>
 
   <script src="js/main.js"></script>
+  <script src="js/support-chat.js" defer></script>
 </body>
 </html>
